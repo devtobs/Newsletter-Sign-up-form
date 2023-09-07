@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+  --max-width: 45rem;
+  --tomato: hsl(4, 100%, 67%);
+  --dark-slate-grey: hsl(234, 29%, 20%);
+  --charcoal-grey: hsl(235, 18%, 26%);
+  --grey: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
+  --placeholder-color: hsl(231, 7%, 60%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.illustration-mobile {
+  width: 100%;
+  max-width: var(--max-width);
+}
+
+.illustration-desktop {
+  display: none;
+}
+
+.content-wrapper {
+  margin: 1.8rem 1.5rem;
+  color: var(--charcoal-grey);
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--dark-slate-grey);
+  line-height: 1;
+}
+
+p {
+  margin: 1.4rem 0;
+}
+
+li {
+  list-style: none;
+  margin: 1rem 0;
+  display: flex;
+}
+
+.icon-list {
+  margin-right: 1rem;
+  align-self: flex-start;
+}
+
+form {
+  margin-top: 2rem;
+}
+
+label {
+  display: block;
+  position: relative;
+}
+
+h5 {
+  color: var(--dark-slate-grey);
+  display: inline-block;
+}
+
+.error-msg {
+  color: var(--tomato);
+  position: absolute;
+  right: 0;
+}
+
+.btn {
+  width: 100%;
+  border-radius: 8px;
+  padding: 1.2rem;
+  border: 1px solid;
+  display: block;
+  color: var(--white);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#email {
+  margin: 0.4rem 0 1.5rem 0;
+  border-color: var(--grey);
+  color: var(--dark-slate-grey);
+}
+
+#email::placeholder {
+  color: var(--placeholder-color);
+}
+
+#email:focus {
+  outline: none;
+  border-color: var(--dark-slate-grey);
+  background-color: var(--white);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0 40px var(--white) inset;
+  -webkit-text-fill-color: var(--dark-slate-grey);
+}
+
+#btn-subscribe,
+#btn-dismiss {
+  font-weight: 700;
+  background-color: var(--dark-slate-grey);
+}
+
+#btn-subscribe:hover,
+#btn-dismiss:hover {
+  background-color: var(--tomato);
+}
+
+.success-msg {
+  padding: 2rem 1.5rem;
+  color: var(--charcoal-grey);
+  height: 100vh;
+}
+
+.msg-wrapper {
+  height: 100%;
+  position: relative;
+}
+
+.msg-wrapper div {
+  transform: translateY(30%);
+}
+
+.msg-wrapper h1 {
+  font-size: 2.5rem;
+  margin: 2rem 0;
+}
+
+#btn-dismiss {
+  position: absolute;
+  bottom: 2.5rem;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--dark-slate-grey);
+  margin-bottom: 1rem;
+}
+
+footer a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 45rem) {
+  body {
+    background-color: var(--dark-slate-grey);
+    height: 100vh;
+    display: block;
+  }
+
+  main {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    background: var(--white);
+    border-radius: 28px;
+    height: 86%;
+    max-height: 38rem;
+    width: 95%;
+    max-width: 50rem;
+    padding: 1rem;
+  }
+
+  .illustration-mobile {
+    display: none;
+  }
+
+  .illustration-desktop {
+    display: block;
+    height: 100%;
+  }
+
+  .content-wrapper {
+    align-self: center;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  .success-msg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2.4rem;
+    background-color: var(--white);
+    border-radius: 16px;
+    width: 26rem;
+    height: 27rem;
+  }
+
+  .msg-wrapper div {
+    transform: translateY(0);
+  }
+
+  .msg-wrapper h1 {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+  }
+
+  #btn-dismiss {
+    padding: 1rem;
+    bottom: 0;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    color: var(--white);
+  }
+
+  footer a {
+    color: hsl(197, 100%, 76%);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.invalid {
+  color: var(--tomato) !important;
+  -webkit-text-fill-color: var(--tomato) !important;
+  border-color: var(--tomato) !important;
+  box-shadow: 0 0 0 1000px hsl(6, 67%, 91%) inset !important;
+}
